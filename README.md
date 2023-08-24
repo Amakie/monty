@@ -7,6 +7,7 @@
 
 #### 0. Push, Pull
 Implement the push and pall opcodes.
+
 **The push opcode**
 
 The opcode push pushes an element to the stack.
@@ -27,6 +28,7 @@ If the stack is empty, don’t print anything
 
 #### 1. Pint
 Implement the pint opcode.
+
 **The pint opcode**
 
 The opcode pint prints the value at the top of the stack, followed by a new line.

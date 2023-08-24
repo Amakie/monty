@@ -39,6 +39,7 @@ typedef struct instruction_s
 
 void _push(stack_t **head, (__attribute__((unused))unsigned int line));
 void _pall(stack_t **head, (__attribute__((unused))unsigned int line));
+void _pint(stack_t **head, unsigned int line);
 
 #endif
 

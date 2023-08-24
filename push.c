@@ -8,7 +8,7 @@
  */
 void _push(stack_t **head, (__attribute__((unused))unsigned int line))
 {
-	stack_t newNode;
+	stack_t *newNode;
 
 	newNode = malloc(sizeof(stack_t));
 
@@ -16,7 +16,7 @@ void _push(stack_t **head, (__attribute__((unused))unsigned int line))
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		free_stack(head);
-		exit(EXIT FAILURE);
+		exit(EXIT_FAILURE);
 	}
 
 	newNode->next = *head;

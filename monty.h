@@ -86,6 +86,14 @@ void _pop(stack_t **head, unsigned int line);
 void _swap(stack_t **head, unsigned int line);
 void _add(stack_t **head, unsigned int line);
 void _nop(stack_t **head, __attribute__((unused)) unsigned int line);
-void (*op_match(line_t lines, mem_t *mem)(stack_t **, unsigned int));
+/*void (*op_match(line_t lines, mem_t *mem)(stack_t **, unsigned int));*/
+
+int is_push(char *opcode);
+void parsefile(FILE *file);
+void (*get_op_func(line_t line, meta_t *meta))(stack_t **stack, unsigned int line_number);
+
+bool comment_check(line_t line);
+bool argument_check(char *token);
+void push_check(line_t line, meta_t *meta, char *opcode);
 
 #endif

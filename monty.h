@@ -1,5 +1,5 @@
 #ifndef "MONTY_H"
-#define "MONTH_H"
+#define "MONTY_H"
 
 #include <stdio.h>
 #include <unistd.h>
@@ -42,5 +42,7 @@ void _pall(stack_t **head, (__attribute__((unused))unsigned int line));
 void _pint(stack_t **head, unsigned int line);
 void _pop(stack_t **head, unsigned int line);
 void _swap(stack_t **head, unsigned int line);
+void _add(stack_t **head, unsigned int line);
+void _nop(stack_t **head, __attribute__((unused)) unsigned int line);
 
 #endif

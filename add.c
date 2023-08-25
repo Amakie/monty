@@ -6,7 +6,6 @@
  * @line: line counter
  * Return: void
  */
-
 void _add(stack_t **head, __attribute__((unused)) unsigned int line)
 {
 	if (*head == NULL || (*head)->next == NULL)
@@ -24,16 +23,12 @@ void _add(stack_t **head, __attribute__((unused)) unsigned int line)
 }
 
 
-
-#include "monty.h"
-
 /**
  * _nop - does nothing
  * @head: pointer to the head of the stack
  * @line: line counter
  * Return: void
  */
-
 void _nop(stack_t **head, __attribute__((unused)) unsigned int line)
 {
 	(void)head;

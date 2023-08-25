@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdio.h>
 
 /**
  * _push - pushes a new node to the top of the stack
@@ -6,7 +7,7 @@
  * @line: line counter
  * Return: void
  */
-void _push(stack_t **head, (__attribute__((unused))unsigned int line))
+void _push(stack_t **head, unsigned int line)
 {
 	stack_t *newNode;
 
@@ -25,13 +26,9 @@ void _push(stack_t **head, (__attribute__((unused))unsigned int line))
 	if (*head)
 	{
 		(*head)->prev = newNode;
-	}	
+	}
 	*head = newNode;
 }
-
-
-
-
 
 /**
  * _pall - prints all node data of the stack
@@ -39,14 +36,15 @@ void _push(stack_t **head, (__attribute__((unused))unsigned int line))
  * @line: line counter
  * Return: void
  */
-void _pall(stack_t **head, (__attribute__((unused))unsigned int line))
+void _pall(stack_t **head, unsigned int line)
 {
-	stack_t *tmp;
+	stack_t *tmp = *head;
 
-	tmp = *head;
+	(void)line; // Unused parameter
+
 	while (tmp)
 	{
-		printf("%d/n", tmp->n);
+		printf("%d\n", tmp->n);
 		tmp = tmp->next;
 	}
 }

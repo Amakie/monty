@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdio.h>
 
 /**
  * _pint - prints node to the top of the stack
@@ -8,39 +9,34 @@
  */
 void _pint(stack_t **head, unsigned int line)
 {
-	if !head || !(*head)
+	if (!head || !(*head))
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line);
 		exit(EXIT_FAILURE);
 	}
-	tmp = *head
-	while (tmp)
-	{
-		if (tmp->prev == NULL)
-			break;
-		tmp = tmp->prev;
-	}
+	    
+	stack_t *tmp = *head;
+	while (tmp->next)
+		tmp = tmp->next;
+
 	printf("%d\n", tmp->n);
 }
 
-
-
-/**_swap - swaps two nodes
+/**
+ * _swap - swaps the top two nodes
  * @head: pointer to the head
  * @line: line counter
  * Return: void
  */
 void _swap(stack_t **head, unsigned int line)
 {
-	int *tmp;
-
-	if !head || !(*head) || !(heads->next)
+	if (!head || !(*head) || !((*head)->next))
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 
-	tmp = (*head)->n;
+	int tmp = (*head)->n;
 	(*head)->n = (*head)->next->n;
 	(*head)->next->n = tmp;
 }

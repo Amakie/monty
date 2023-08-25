@@ -3,11 +3,10 @@
 /**
  * _pop - pops the top element off the stack
  * @head: pointer to the head
- * @line: line counter
+ * @line: line number
  * Return: void
  */
-
-void _pop(stack_t **head, __attribute__((unused)) unsigned int line)
+void _pop(stack_t **head, unsigned int line)
 {
 	if (*head == NULL)
 	{

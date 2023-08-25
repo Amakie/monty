@@ -1,13 +1,12 @@
 #include "monty.h"
 
 /**
- * main - opens a monty fie in order to be parsed
+ * main - opens a Monty file in order to be parsed
  * @argc: argument counts
  * @argv: array of arguments
  *
  * Return: EXIT_SUCCESS upon success, or EXIT_FAILURE if otherwise
  */
-
 int main(int argc, char *argv[])
 {
 	if (argc != 2)

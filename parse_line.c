@@ -7,7 +7,6 @@
  *
  * Return: Nothing
  */
-
 void parseline(line_t *line, char *buffer)
 {
 	unsigned int i;
@@ -36,15 +35,14 @@ void parseline(line_t *line, char *buffer)
  *
  * Return: Nothing
  */
-
 void parsefile(FILE *file)
 {
 	size_t size = 0;
-	meta_t *meta = NULL;
+	mem_t *mem = NULL;
 	line_t line;
 
-	meta = malloc(sizeof(meta_t));
-	if (!meta)
+	mem = malloc(sizeof(mem_t));
+	if (!mem)
 	{
 		fprintf(stderr, "Error: malloc failed");
 		exit(EXIT_FAILURE);
@@ -53,20 +51,20 @@ void parsefile(FILE *file)
 	line.number = 0;
 	line.content = NULL;
 
-	meta->file = file;
-	meta->stack = NULL;
-	meta->buf = NULL;
+	mem->file = file;
+	mem->stack = NULL;
+	mem->buf = NULL;
 
-	while (getline(&(meta->buf), &size, meta->file) != -1)
+	while (getline(&(mem->buf), &size, mem->file) != -1)
 	{
 		line.number++;
-		parseline(&line, meta->buf);
+		parseline(&line, mem->buf);
 		if (line.content)
-			get_op_func(line, meta);
+			get_op_func(line, mem);
 	}
 
-	free(meta->buf);
-	free_stack(&(meta->stack));
-	fclose(meta->file);
-	free(meta);
+	free(mem->buf);
+	free_stack(&(mem->stack));
+	fclose(mem->file);
+	free(mem);
 }

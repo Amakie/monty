@@ -19,11 +19,9 @@ The project involves implementing a stack and queue data structure using the Mon
 
 To compile the Monty project, use the following command:
 
-```sh
-$ gcc -Wall -Werror -Wextra -pedantic -std=c89 *.c -o monty
+```$ gcc -Wall -Werror -Wextra -pedantic -std=c89 *.c -o monty```
 
-
-## Mandatory  Tasks:
+## Tasks
 
 ### 0. Push, Pull
 Implement the ```push``` and ```pall``` opcodes.

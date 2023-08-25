@@ -9,13 +9,13 @@
  */
 void _pint(stack_t **head, unsigned int line)
 {
+	stack_t *tmp = *head;
 	if (!head || !(*head))
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line);
 		exit(EXIT_FAILURE);
 	}
-	    
-	stack_t *tmp = *head;
+
 	while (tmp->next)
 		tmp = tmp->next;
 
@@ -30,13 +30,14 @@ void _pint(stack_t **head, unsigned int line)
  */
 void _swap(stack_t **head, unsigned int line)
 {
+	int tmp;
 	if (!head || !(*head) || !((*head)->next))
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 
-	int tmp = (*head)->n;
+	tmp = (*head)->n;
 	(*head)->n = (*head)->next->n;
 	(*head)->next->n = tmp;
 }

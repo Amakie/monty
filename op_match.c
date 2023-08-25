@@ -7,7 +7,7 @@
  *
  * Return: Pointer to the function to be executed
  */
-void (*get_op_func(line_t line, mem_t *meta))(stack_t **stack, unsigned int line_number)
+void (*get_op_func(line_t line, mem_t *mem))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t instructions[] = {
 		{"push", _push},

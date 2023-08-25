@@ -5,6 +5,10 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <unistd.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <string.h>
 
 #define TRUE 1
 
@@ -93,10 +97,13 @@ void _pop(stack_t **head, unsigned int line_number);
 void _swap(stack_t **head, unsigned int line_number);
 void _add(stack_t **head, unsigned int line_number);
 void _nop(stack_t **head, unsigned int line_number);
+int main(int argc, char *argv[]);
+void free_stack(stack_t **head);
 
 int is_push(char *opcode);
 void parsefile(FILE *file);
 void (*get_op_func(line_t line, mem_t *mem))(stack_t **stack, unsigned int line_number);
+void parseline(line_t *line, char *buffer);
 
 bool comment_check(line_t line);
 bool argument_check(char *token);
